@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+    function addToCart(productName, price) {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let existing = cart.find(item => item.name === productName);
+
+        if (existing) {
+            existing.quantity += 1;
+        } else {
+            cart.push({ name: productName, price: price, quantity: 1 });
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+        //alert(productName + " added to cart!");
+    }
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Kitchen | Products</title>
+    <link rel="stylesheet" href="product.css">
+    <link rel="icon" href="images/logo.png">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo.jpeg" alt="logo">
+            </a>
+        </div>
+
+        <!-- Centered Heading -->
+        <div class="heading">
+            <h1>Emart</h1>
+        </div>
+
+        <div class="links">
+            <ul>
+                <li><input type="text" id="searchBar" placeholder="Search utensils..." onkeyup="searchItems()"></li>
+                <li><a href="cart.html">Go to Cart</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact us</a></li>
+                <li><a href="products.html">Products</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <h1>Our Products</h1>
+        <div class="product">
+            <div class="prod-container">
+                <img class="prod-img" src="images/vivo.avif" alt="vivo">
+                <div class="prod-name">vivo</div>
+                <div class="prod-price">Rs.14,399</div>
+                <div class="buy"><button onclick="addToCart('Vivo', 14399,this)">Add to Cart</button></div>
+            </div>
+
+            <div class="prod-container">
+                <img class="prod-img" src="images/samsung.jpeg" alt="Samsung">
+                <div class="prod-name">Samsung</div>
+                <div class="prod-price">Rs.33399</div>
+                <div class="buy"><button onclick="addToCart('Samsung', 33399,this)">Add to Cart</button></div>
+            </div>
+
+            <div class="prod-container">
+                <img class="prod-img" src="images/redmi.png" alt="Redmi">
+                <div class="prod-name">Redmi</div>
+                <div class="prod-price">Rs.11,100</div>
+                <div class="buy"><button onclick="addToCart('Redmi pro', 11100,this)">Add to Cart</button></div>
+            </div>
+
+            <div class="prod-container">
+                <img class="prod-img" src="images/realme.jpeg" alt="Realme">
+                <div class="prod-name">Realme</div>
+                <div class="prod-price">Rs.23,299</div>
+                <div class="buy"><button onclick="addToCart('Realme',23299,this)">Add to Cart</button></div>
+            </div>
+
+            <div class="prod-container">
+                <img class="prod-img" src="images/nokia.jpeg" alt="Nokia">
+                <div class="prod-name">Nokia 5g</div>
+                <div class="prod-price">Rs.13,759</div>
+                <div class="buy"><button onclick="addToCart('Nokia 5g', 13759,this)">Add to Cart</button></div>
+            </div>
+
+            <div class="prod-container">
+                <img class="prod-img" src="images/oppo.jpeg" alt="Oppo plus">
+                <div class="prod-name">Oppo plus</div>
+                <div class="prod-price">Rs.19,899</div>
+                <div class="buy"><button onclick="addToCart('Oppo plus', 19899,this)">Add to Cart</button></div>
+            </div>
+
+            <div class="prod-container">
+                <img class="prod-img" src="images/lenovo.jpg" alt="Lenovo">
+                <div class="prod-name">Lenovo</div>
+                <div class="prod-price">Rs.29,999</div>
+                <div class="buy"><button onclick="addToCart('Lenovo', 29999,this)">Add to Cart</button></div>
+            </div>
+
+            <div class="prod-container">
+                <img class="prod-img" src="images/iqoo.png" alt="Iqoo">
+                <div class="prod-name">Iqoo pro</div>
+                <div class="prod-price">Rs.26,797</div>
+                <div class="buy"><button onclick="addToCart('IQoo pro', 26797,this)">Add to Cart</button></div>
+            </div>
+
+            <div class="prod-container">
+                <img class="prod-img" src="images/iphone.jpeg" alt="Iphone">
+                <div class="prod-name">Iphone 16</div>
+                <div class="prod-price">Rs.81,799</div>
+                <div class="buy"><button onclick="addToCart('Iphone 16', 81799,this)">Add to Cart</button></div>
+            </div>
+
+            <div class="prod-container">
+                <img class="prod-img" src="images/acer.webp" alt="Acer">
+                <div class="prod-name">Acer</div>
+                <div class="prod-price">Rs.32,382</div>
+                <div class="buy"><button onclick="addToCart('Acer laptop', 32382,this)">Add to Cart</button></div>
+            </div>
+
+            <div class="prod-container">
+                <img class="prod-img" src="images/lenovo yoga.jpeg" alt="Strainer">
+                <div class="prod-name">Lenovo yoga</div>
+                <div class="prod-price">Rs.51,099</div>
+                <div class="buy"><button onclick="addToCart('Lenova Yoga', 51099,this)">Add to Cart</button></div>
+            </div>
+
+            <div class="prod-container">
+                <img class="prod-img" src="images/dell.jpeg" alt="Teapot">
+                <div class="prod-name">Dell</div>
+                <div class="prod-price">Rs.49,999</div>
+                <div class="buy"><button onclick="addToCart('Dell inspiron',49999,this)">Add to Cart</button></div>
+            </div>
+
+            <div class="prod-container">
+                <img class="prod-img" src="images/hp.jpeg" alt="HP notebook">
+                <div class="prod-name">HP notebook</div>
+                <div class="prod-price">Rs.73,256</div>
+                <div class="buy"><button onclick="addToCart('HP notebook', 73256,this)">Add to Cart</button></div>
+            </div>
+
+            <div class="prod-container">
+                <img class="prod-img" src="images/asus.jpeg" alt="Asus laptop">
+                <div class="prod-name">Asus laptop</div>
+                <div class="prod-price">Rs.61,705</div>
+                <div class="buy"><button onclick="addToCart('Asus laptop', 61705,this)">Add to Cart</button></div>
+            </div>
+
+            <div class="prod-container">
+                <img class="prod-img" src="images/macbook.jpeg" alt="Macbook pro">
+                <div class="prod-name">Macbook pro</div>
+                <div class="prod-price">Rs.1,11,650</div>
+                <div class="buy"><button onclick="addToCart('Macbook pro', 111650,this)">Add to Cart</button></div>
+            </div>
+        </div>
+    </main>
+    
+
+
+    <footer>
+        <p>&copy; 2025 Our Kitchen. All rights reserved.</p>
+    </footer>
+
+    <script src="cart.js"></script>
+    <script>
+function addToCart(productName, price, buttonElement) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let existing = cart.find(item => item.name === productName);
+
+    if (existing) {
+        existing.quantity += 1;
+    } else {
+        cart.push({ name: productName, price: price, quantity: 1 });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    // Change button text and disable it
+    buttonElement.textContent = "Added to Cart";
+    buttonElement.disabled = true;
+    buttonElement.style.backgroundColor = "#999";
+}
+</script>
+
+
+</body>
+</html>
